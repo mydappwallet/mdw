@@ -1,0 +1,8 @@
+{
+  "connect-title": ["Connect", "Połącz"],
+  "connect-question": ["Are you sure you want to connect MyDAPPWallet with <span class=\"bold\"> ${name}</span>?", "Czy jesteś pewien, że chcesz połaczyć MyDAPPWallet z${name}?"]
+
+  
+  
+
+}

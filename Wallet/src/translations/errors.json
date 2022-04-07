@@ -1,0 +1,52 @@
+{
+
+ "error-title-404": ["Oops! You're lost.", "Oops! Zgubiłeś się."],
+  "error-404": ["The page you are looking for was not found.", "Strona której szukasz nie istnieje"],
+
+  "error-title-500": ["Something went wrong.", "Coś poszo nie tak."],
+  "error-500": ["There was a problem on our end. Please try again later.", "Wystąpił nieznany problem. Spróbuj później."],
+
+
+
+
+  "error-title-2000": ["Please enter Login and Password!", "Proszę podaj nazwę użytkownika oraz hasło!"],
+  "error-title-2100": ["Invalid login details!", "Błędne dane logowania!"],
+
+  "error-3300": ["Email address not exist! Please type again your address Email.", "Adres mailowy nie istnieje. Wprowadź ponownie adres email."],
+  
+  "error-title-3400": ["Invalid reflink id!", "Błędny reflink!"],
+  "error-3400": ["Email reflink id is ivalid.", "Reflink z email-a jest błędny"],
+  
+  "error-title-3500": ["Account activated!", "Konto aktywowane!"],
+  "error-3500": ["Your account was activated before!.", "Twpje konto zostało już aktywowane"],
+  
+  "error-4000": ["Invalid Reflink!", "Błedny Reflink!"],
+  "error-title-4000": ["Invalid Reflink!", "Błedny Reflink!"],
+  "error-4100": ["Reflink expired!", "Reflink wygasł!"],
+  "error-title-4100": ["Your Reflink expired!. Please generate new Reflink!", "Twój Reflink wygasł. Wygeneruj ponownie reflink!"],
+
+
+  "error-4300": ["Incorrect Code!", "Błedny kod!"],
+  "error-4400": ["You sent 3 times incorect Code!", "Wysłałeś 3 razy nieprawidłowy kod!"],
+  "error-4500": ["Transaction rejected by user!", "Transakcja odrzucona przez użytkownika!"],
+
+  "error-9100": ["Account with the same name exist!", "Konto o tej samej nazwie istnieje!"],
+  
+  "error-10100": ["You can't delete all account!", "Nie możesz skasować wszystkich kont!"],
+  "error-12100": ["Asset is added before!", "Zasób dodany wcześniej!"],
+
+
+  "error-501000": ["Incorect JSON File!", "Nieprawidłowy Plik JSON!"],
+  "error-501100": ["Failed to read JSON file!", "Nie mogę załaładować Pliku JSON!"],
+  "error-501200": ["Possibly wrong Password!", "Prawdopodobnie błędne Hasło!"],
+    
+  "remaining-message": ["Window will be auto close for ${s} seconds", "Okno zostanie automatycznie zamknięte za ${s} sekund."],
+  "button-go-back": ["Go Back", "Idź spowrotem"]
+
+ 
+  
+
+  
+  
+
+}

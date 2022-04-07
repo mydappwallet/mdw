@@ -1,0 +1,19 @@
+{
+  "yup-required": ["${name} is required!", "${name} wymagane!"],
+  "yup-min": ["${name} has to be at least ${char} characters!", "${name} musi mieć przynajmniej ${char} litery!"],
+  "yup-minNumber": ["${name} has to be at least ${value}!", "${name} musi mieć przynajmniej ${value}!"],
+  "yup-max": ["${name} has to be not longer than ${char} characters!", "${name} musi najwiecej ${char} liter!"],
+  "yup-password": ["Passwords must match!", "Hasła muszą pasaować!"],
+  "yup-new-password": ["New Password must be difference than Old Password!", "Nowe hasło musi być różne od starego!"],
+  "yup-email": ["Email address must be a valid format!", "Adres mailowy musi być w odpowiednim formacie!"],
+  "yup-moreThen": ["${name} must be greater then ${value}", "${name} musi być większe od !${value}"],
+  "yup-terms-and-condition": ["Required accept terms and condition!", "Wymagana akceptacja regulaminu!"],
+  "yup-private-key": ["Private Key must be a valid format!", "Klucz prywatny musi być w odpowiednim formacie!"],
+  "yup-format": ["${name} must be a valid format!", "${name} musi być w odpowiednim formacie!"],
+  "yup-insufficient-funds": ["Insufficient funds.", "Brak środków."],
+  "yup-token": ["This is not token address!", "To nie jest adres tokena!"],
+  "yup-minSymbols" : ["${name} must contain at least ${symbols} symbol!", "${name} must zawierać przynajmniej ${symbols} symbol!"]
+  
+
+}
+

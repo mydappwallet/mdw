@@ -1,0 +1,29 @@
+{
+  "contract-title": ["Smart Contract", "Smart Kontrakt"],
+  "name": ["Name", "Nazwa"],
+  "chain": ["Network", "Sieć"],
+
+  "methods-subtitle": ["Methods", "Funkcje"],
+  "column-signature": ["Method", "Funkcja"],
+  "column-ids": ["Ids", "Ids"],
+  "column-stateMutability": ["State Mutability", "Zmiana stanu"],
+  "column-payment": ["Payment", "Płatność"],
+
+  "payment-crypto": ["Only Crypto", "Tylko Krytowaluta"],
+  "payment-fiat": ["FIAT & Crypto", "FIAT & Kryptowaluta"],
+
+
+  
+  "app-status-0": ["Disabled", "Wyłączona"],
+  "app-status-1": ["Enabled", "Włączona"],
+  "delete-title": ["Delete", "Delete"],
+  "delete-text": ["Are you sure you want to delete contract <b>${name}</b>?", "Czy jesteś pewien, że chcesz skasować kontrakt ${name}!"]
+  
+
+ 
+ 
+ 
+  
+  
+
+}

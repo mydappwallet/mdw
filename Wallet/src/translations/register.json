@@ -1,0 +1,12 @@
+{
+  "register-title": ["Create New Account", "Utwórz nowe konto"],
+  "username": ["User Name", "Nazwa użytkownika"],
+  "password": ["Password", "Hasło"],
+  "repeatPassword": ["Repeat Password", "Hasło"],
+  "email": ["Email address", "Adres mailowy"],
+  "create-account": ["Create Account", "Utwórz Konto"]
+
+  
+  
+
+}

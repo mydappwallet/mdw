@@ -1,0 +1,35 @@
+{
+  "page-title": ["Unity888", "Unity888"],
+  "wallet": ["Wallet", "Portfel"],
+  "developers": ["Developers", "Programiści"],
+  "save": ["Save", "Zapisz"],
+  "cancel": ["Cancel", "Anuluj"],
+  "delete": ["Delete", "Skasuj"],
+  "add": ["Add", "Dodaj"],
+  "import": ["Import", "Import"],
+  "yes": ["Yes", "Tak"],
+  "no": ["No", "Nie"],
+  "select": ["Select", "Wybierz"],
+  "close": ["Close", "Zamknij"],
+  "error": ["Error", "Błąd"],
+  "network-1": ["Main Ethereum Network", "Główna sieć Ethererum"],
+  "network-3": ["Ropsten Test Network", "Sieć testowa Ropsten"],
+  "network-4": ["Rinkeby Test Network", "Sieć testowa Rinkeby"],
+   "address": ["Address", "Adres"],
+   "asset": ["Asset", "Składnik aktywów"],
+
+  "transaction-type-10": ["Register Account", "Utwórz konto"],
+  "transaction-type-20": ["Change Email", "Zmień Email"],
+  "transaction-type-50": ["Send ${symbol}", "Wyślij ${symbol}"],
+  "transaction-type-60": ["Contract Interaction", "Interakcja z Kontraktem"],
+  
+  "transaction-status-0": ["New", "Nowa"],
+  "transaction-status-1": ["Pending", "Procesowanie"],
+  "transaction-status-2": ["Rejected", "Odrzucona"],
+  "transaction-status-3": ["Failed", "Błędna"],
+  "transaction-status-4": ["Success", "Sukces"]
+
+  
+  
+
+}

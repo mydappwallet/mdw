@@ -1,0 +1,15 @@
+{
+  "send-title": ["Send", "Wyślij"],
+  "from": ["From", "Od"],
+  "to": ["To", "Do"],
+  "amount": ["Amount", "Ilość"],
+  "transaction-fee": ["Transaction fee", "Opłata"],
+  "send": ["Send", "Wyślij"],
+  "gasPrice": ["Gas Price", "Cena gazu"],
+  "gasLimit": ["Gas Limit", "Limit gazu"],
+  "balance": ["Balance", "Ilość środków"],
+  "no-conversion-rate": ["No Conversion Rate Available", "Brak kursu waluty"]
+  
+
+
+}

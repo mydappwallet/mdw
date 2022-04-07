@@ -1,0 +1,26 @@
+{
+  "app-title": ["Application", "Aplikacja"],
+  "column-name": ["Name", "Nazwa"],
+  "column-symbol": ["Symbol", "Symbol"],
+  "column-address": ["Address", "Adres"],
+  "column-decimals": ["Decimals", "Precyzja"],
+  "column-actions": ["Actions", "Akcje"],
+  "app-status-0": ["Disabled", "Wyłączona"],
+  "app-status-1": ["Enabled", "Włączona"],
+  "delete-title": ["Delete", "Delete"],
+  "delete-text": ["Are you sure you want to delete application <b>${name}</b>?", "Czy jesteś pewien, że chcesz skasować aplikacje ${name}!"],
+  "add-title": ["Add Application", "Dodaj Aplikacje"],
+  "name": ["Name", "Nazwa"],
+  "apiKey": ["ApiKey", "ApiKey"],
+  "status": ["Status", "Status"],
+  "add-title": ["Add Smart Contract", "Dodaj Smart Kontrakt"],
+  "add-name": ["Name", "Nazwa"],
+  "add-address": ["Address", "Adres"],
+  "add-chain": ["Network", "Network"],
+  "add-abi": ["ABI", "ABI"]
+ 
+ 
+  
+  
+
+}

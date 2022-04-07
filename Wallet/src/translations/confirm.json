@@ -1,0 +1,23 @@
+{
+  "confirm-title": ["Confirm", "Potwierdź"],
+  "amount": ["Amount", "Kwota"],
+  "recipient": ["Recipient", "Odbiorca"],
+  "uid": ["UID", "UID"],
+  "type": ["Transaction type", "Typ transakcji"],
+   "from": ["From", "Od"],
+  "to": ["To", "do"],
+  "network": ["Network", "Sieć"],
+  "gasPrice": ["Gas Price", "Cena gazu"],
+  "gasLimit": ["Gas Limit", "Limit gazu"],
+  "action": ["Action", "Akcja"],
+  "code-label": ["Enter Code number from Google Authenticator", "Podaj kod od Google Authenticator-a"],
+  "code-placeHolder": ["You have ${attempts} attempts ", "Masz ${attempts} próby"],
+  "see-more": ["Click to see More", "Kliknij aby zobaczyć więcej"],
+  "see-less": ["Click to see Less", "Kliknij aby zobaczyć mniej"]
+ 
+  
+
+  
+  
+
+}

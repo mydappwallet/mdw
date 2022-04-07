@@ -1,0 +1,11 @@
+{
+  "processing-title": ["Transaction Processing", "Procesowanie transakcji"],
+  "code-label": ["Enter Code number ${codeId}", "Podaj kod nr ${codeId}"],
+  "code-placeHolder": ["You have ${attempts} attempts ", "Masz ${attempts} próby"]
+ 
+  
+
+  
+  
+
+}

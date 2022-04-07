@@ -1,0 +1,39 @@
+{
+  "transaction-title": ["Transaction", "Transakcja"],
+  "id": ["Id", "Id"],
+  "uid": ["UID", "UID"],
+  "type": ["Transaction type", "Typ transakcji"],
+
+  "status": ["Status", "Status"],
+  "action": ["Action", "Akcja"],
+  "timestamp": ["Timestamp", "Czas"],
+  "expirationDate": ["Expiration Date", "Data ważnoSci"],
+  "transactionHash": ["Transaction Hash", "Hash transakcji"],
+  "from": ["From", "Od"],
+  "to": ["To", "do"],
+  "network": ["Network", "Sieć"],
+  "gasPrice": ["Gas Price", "Cena gazu"],
+  "gasLimit": ["Gas Limit", "Limit gazu"],
+  "gasUsed": ["Gas Used by Transaction", "Użyty gaz przez transakcje"],
+  "value": ["Value", "Wartość"],
+  "userName": ["User Name", "Nazwa użytkownika"],
+  "email": ["Email address", "Adres Email"],
+  "new-email": ["New Email address", "New Adres Email"],
+  "see-more": ["Click to see More", "Kliknij aby zobaczyć więcej"],
+  "see-less": ["Click to see Less", "Kliknij aby zobaczyć mniej"],
+  "create-account-info": ["We sent to your email address message with QR Code to Google Authenticator", "Wysłaliśmy do Ciebie wiadomość na twój adres Email z QR Codem do Google Authenticatora"],
+  "title-0": ["Confirm Transaction", "Potwierdź transakcje"],
+  "code-label": ["Enter Code number from Google Authenticator", "Podaj kod od Google Authenticator-a"],
+  "code-placeHolder": ["You have ${attempts} attempts ", "Masz ${attempts} próby"],
+  "pending-title": ["Transaction Pending", "Procesowanie transakcji"],
+  "rejected-title": ["Transaction Rejected", "Transakcja odrzucona"],
+  "finished-title": ["Transaction Zakończona", "Transakcja zakończona"],
+
+  
+    "auto-close": ["The window will be close for ${seconds} seconds.", "Okno zostanie zamknięte za ${seconds} sekund."]
+  
+
+  
+  
+
+}

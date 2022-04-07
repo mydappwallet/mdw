@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+button.MBMWidget_GeneralButton.MBMWidget_full-width.MBMWidget_Exchange_ButtonCheckout.MBMWidget_defaultAppButton {
+ height: 40px;
+ outline-width: 0;
+ border-width: 0;
+ border-radius: 4px;
+ transition: .5s;
+ color: #fff;
+ font-size: 16px;
+ font-weight: 500;
+ background-color: #ff4000!important;
+ padding: 7px 10px!important;
+}
+.MBMWidget_GeneralInput input {
+ height: 36px!important;
+}
+.MBMWidget_Exchange_form label {
+ color: #ff4000!important;
+}
+select.MBMWidget_my-2.MBMWidget_full-width {
+ width: 80px;
+ border-color: #ff4000!important;
+ color: #fff;
+ outline-width: 1px!important;
+ height: 38px!important;
+ font-size: 16px!important;
+ font-weight: 500!important;
+ border-radius: 4px!important;
+ outline-color: #ff4000!important;
+ background-color: #ff4000!important;
+ padding: 0px 0px 0px 9px!important;
+ margin: 0px!important;
+}
+</style>
+
+
+<script>
+window.addEventListener('resize', function() {
+
+});
+
+ (function(){
+	 
+
+	 const urlParams = new URLSearchParams();
+	 const params = Object.fromEntries(urlParams); 
+
+ var data = {};
+ 
+ var requestOptions = {
+ method: 'POST',
+ headers: {
+ apiKey: 'd949c0f1-da49-4a0c-a0ed-696469663d7d',
+ 'Content-Type': 'application/json',
+ },
+ body: JSON.stringify(data),
+ params: { 
+ additionalData: ''
+ }
+ };
+ 
+ fetch('https://api-dev.mobilum.com/widget/GetWidget'+ window.location.search, 
+requestOptions)
+ .then(response => response.json())
+ .then(
+ async (data = {
+ result
+ }) => {
+ var element = document.getElementById('widgetContainer');
+ if (element) {
+ element.innerHTML = atob(data.result.widgetBase64Html);
+ var script = document.createElement('script');
+ script.async = true;
+ script.src = atob(data.result.widgetBase64ScriptUrl);
+ element.appendChild(script);
+ }
+ },
+ );
+ })();
+ </script>
+</head>
+<body style='background-color: #fff'>
+	<div id="widgetContainer"></div>
+</body>
+</html>

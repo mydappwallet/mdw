@@ -1,0 +1,25 @@
+{
+  "user-profile-edit-title": ["User Profile", "Profil Użytkownika"],
+  "user-profile-edit-desciption": ["Setup your general profile details.", "Zmień swoje podstawowe dane,"],
+  "firstName": ["First Name", "Imię"],
+  "lastName": ["Last Name", "Nazwisko"],
+  "picture-profile": ["Picture profile", "Zdjęcie profilu"],
+  "upload-image": ["Upload Image", "Załaduj obrazek"],
+  "country": ["Country", "Kraj"],
+  "mobilePhone": ["Mobile Number", "Numer telefonu komórkowego"],
+  "email": ["Email", "Adres Email"],
+  "about": ["About you", "About you"],
+  "tags": ["Tags", "Tagi"],
+  "social": ["Social", "Sosial Media"],
+  "social-description": ["Setup your social profiles info.", "Uzupełnij informacje na temat swoich mediów społecznościowych"],
+  "notifications": ["Notifications", "Powiadomienia"],
+  "notifications-description": ["Setup which notifications would you like to receive.", "Skonfiguruj, które powiadomienia chcesz otrzymywać"],
+  "notificationTransaction": ["Transactions", "Transakcje"],
+  "notificationTransaction-description": ["Sends notification emails when you order the transacion. ", "Wysyła e-maile z powiadomieniami kiedy zlecisz realizacje transakcji."],
+  "notificationNewDapps": ["New Dapps", "Nowe aplikacje"],
+  "notificationNewDapps-description": ["Sends notification emails when you are invited to a new Dapps. ", "Wysyła e-maile z powiadomieniami, gdy zostaniesz zaproszony do nowego DAPPa"],
+  "notificationNews": ["News", "Nowości"],
+  "notificationNews-description": ["Sends notification emails when we prepare new features.", "Wysyła e-maile z powiadomieniami kiedy przygotujemy nowe funkcjonalności."],
+  
+  "save-changes": ["Save Changes", "Zapisz zmiany"]
+}

@@ -1,0 +1,11 @@
+{
+ "info-1000": ["Check your email and locate the confirmation email. Follow the steps in the email to finish register in myDAPPwallet.", "Sprawdź swój Email. Wykonaj kroki z wiadomości aby zakończyć proces rejestracji w myDAPPwallet."],
+ "info-2000": ["Your profile has been successfully updated!", "Twój profil został poprawnie zaktualizowany!"],
+ "info-3000": ["Transaction ${uid} has been successfully processed!", "Transackcja ${uid} została przeprocesowana pozytywnie!"],
+ "info-4000": ["Check your email and locate the reset password email. Follow the steps in the email to reset password in myDAPPwallet.", "Sprawdź swój Email. Wykonaj kroki z wiadomości aby zrestartować hasło do myDAPPwallet."],
+ "info-5000": ["Password reseted. Please try to login.", "Hasło zrestartowane. Proszę spróbuj się zalogować."],
+ "info-6000": ["Password changed. ", "Hasło zmienione."]
+  
+  
+
+}

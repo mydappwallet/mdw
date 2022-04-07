@@ -1,0 +1,18 @@
+{
+  "books-title": ["Books", "Konta"],
+  "column-name": ["Name", "Nazwa"],
+  "column-address": ["Address", "Adres"],
+  "column-actions": ["Actions", "Akcje"],
+  "edit-title": ["Edit", "Edytuj"],
+  "delete-title": ["Delete", "Delete"],
+  "delete-text": ["Are you sure you want to delete contact <b>${name}</b>?", "Czy jesteś pewien, że chcesz skasować kontakt ${name}!"],
+  "edit-name": ["Name", "Nazwa"],
+  "add-name": ["Name", "Nazwa"],
+  "add-title": ["Add Contact", "Dodaj contact"]
+
+ 
+ 
+  
+  
+
+}
