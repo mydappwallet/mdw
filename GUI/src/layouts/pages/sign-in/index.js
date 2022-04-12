@@ -45,7 +45,6 @@ import BasicLayout from "layouts/pages/components/BasicLayout";
 import Socials from "layouts/pages/components/Socials";
 import Separator from "layouts/pages/components/Separator";
 
-// eslint-disable-next-line import/no-unresolved
 import * as authentication from "actions/authentication";
 
 // Images
@@ -234,7 +233,7 @@ class SignIn extends Component {
                     <SuiBox mt={1} mb={3}>
                       <SuiButton
                         component={Link}
-                        to="/authentication/sign-up/basic"
+                        to="/authentication/sign-up"
                         variant="gradient"
                         color="dark"
                         fullWidth

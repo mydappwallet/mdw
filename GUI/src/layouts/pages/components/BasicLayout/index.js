@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
 =========================================================
 * Soft UI Dashboard PRO React - v3.0.0
@@ -13,6 +14,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+import { connect } from "react-redux";
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -28,6 +30,7 @@ import PageLayout from "components/layout/LayoutContainers/PageLayout";
 
 // Authentication layout components
 import Footer from "layouts/pages/components/Footer";
+import SuiAlert from "components/sui/SuiAlert";
 
 function BasicLayout({ title, description, image, children }) {
   return (
@@ -70,6 +73,7 @@ function BasicLayout({ title, description, image, children }) {
       <SuiBox mt={{ xs: -26, lg: -24 }} px={1} width="calc(100% - 2rem)" mx="auto">
         <Grid container spacing={1} justifyContent="center">
           <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
+            <SuiAlert>This is an alert!</SuiAlert>
             {children}
           </Grid>
         </Grid>
@@ -93,4 +97,10 @@ BasicLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default BasicLayout;
+const mapStateToProps = (state) => ({
+  ...state,
+});
+
+const mapDispatchToProps = (dispatch) => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BasicLayout);

@@ -37,7 +37,7 @@ Coded by www.creative-tim.com
 
 // Soft UI Dashboard PRO React layouts
 import Default from "layouts/default";
-import SignInBasic from "layouts/pages/sign-in";
+import SignIn from "layouts/pages/sign-in";
 import SignUpBasic from "layouts/pages/sign-up";
 import ResetBasic from "layouts/pages/reset-password";
 import LockBasic from "layouts/pages/lock";
@@ -79,8 +79,8 @@ const routes = [
           {
             name: "Basic",
             key: "basic",
-            route: "/authentication/sign-in/basic",
-            component: SignInBasic,
+            route: "/authentication/sign-in",
+            component: SignIn,
           },
         ],
       },
@@ -91,7 +91,7 @@ const routes = [
           {
             name: "Basic",
             key: "basic",
-            route: "/authentication/sign-up/basic",
+            route: "/authentication/sign-up",
             component: SignUpBasic,
           },
         ],

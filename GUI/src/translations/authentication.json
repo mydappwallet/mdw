@@ -1,8 +1,10 @@
 {
   "authentication.title": ["Welcome!", "Witam!"],
-  "authentication.signin.subtitle": ["Use this form to login in into myDAPPWallet or create account for free.", "Użyj tego formularza aby zalogować się do myDAPPWWallet lub założyć konto za darmo!"],
   "authentication.signin": ["Sign in", "Zaloguj się"],
-  "authentication.signup": ["Sign up", "Załóż konto"],
+  "authentication.signin.subtitle": ["Use this form to login in into myDAPPWallet or create account for free.", "Użyj tego formularza aby zalogować się do myDAPPWWallet lub założyć konto za darmo!"],
+  "authentication.signup": ["Sign Up", "Sign Up"],
+  "authentication.registerWith": ["Register with", "Załóż konto"],
+  "authentication.signup.subtitle": ["Use this form to login in into myDAPPWallet or create account for free.", "Użyj tego formularza aby zalogować się do myDAPPWWallet lub założyć konto za darmo!"],
   "authentication.rememberme": ["Remember me", "Zapamiętaj mnie"]
 }
 
