@@ -16,6 +16,8 @@ Coded by www.creative-tim.com
 // react-router-dom components
 import { Link } from "react-router-dom";
 
+import { withLocalize, Translate } from "react-localize-redux";
+
 // @mui material components
 import Grid from "@mui/material/Grid";
 
@@ -62,16 +64,16 @@ function Error404() {
                 </SuiTypography>
               </SuiBox>
               <SuiTypography variant="h2" color="dark" textGradient fontWeight="bold">
-                Erm. Page not found
+                <Translate id="error-title-404" />
               </SuiTypography>
               <SuiBox mt={1} mb={2}>
                 <SuiTypography variant="body1" color="text">
-                  We suggest you to go to the homepage while we solve this issue.
+                  <Translate id="error-404" />
                 </SuiTypography>
               </SuiBox>
               <SuiBox mt={4} mb={2}>
                 <SuiButton component={Link} to="/" variant="gradient" color="dark">
-                  go to homepage
+                  <Translate id="go-to-homepage" />
                 </SuiButton>
               </SuiBox>
             </Grid>
@@ -86,4 +88,4 @@ function Error404() {
   );
 }
 
-export default Error404;
+export default withLocalize(Error404);

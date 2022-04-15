@@ -28,10 +28,13 @@ import SuiBox from "components/sui/SuiBox";
 import SuiAlertRoot from "components/sui/SuiAlert/SuiAlertRoot";
 import SuiAlertCloseIcon from "components/sui/SuiAlert/SuiAlertCloseIcon";
 
-function SuiAlert({ color, dismissible, children, ...rest }) {
+function SuiAlert({ color, dismissible, onClose, children, ...rest }) {
   const [alertStatus, setAlertStatus] = useState("mount");
 
-  const handleAlertStatus = () => setAlertStatus("fadeOut");
+  const handleAlertStatus = () => {
+    setAlertStatus("fadeOut");
+    if (onClose) onClose();
+  };
 
   // The base template for the alert
   const alertTemplate = (mount = true) => (
@@ -65,6 +68,7 @@ function SuiAlert({ color, dismissible, children, ...rest }) {
 SuiAlert.defaultProps = {
   color: "info",
   dismissible: false,
+  onClose: undefined,
 };
 
 // Typechecking props of the SuiAlert
@@ -80,6 +84,7 @@ SuiAlert.propTypes = {
     "dark",
   ]),
   dismissible: PropTypes.bool,
+  onClose: PropTypes.func,
   children: PropTypes.node.isRequired,
 };
 

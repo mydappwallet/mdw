@@ -1,15 +1,15 @@
 // prettier-ignore
-var Jsonrpc = require('./lib/jsonrpc.js');
-var errors = require('web3-core-helpers').errors;
-var XHR2 = require('xhr2-cookies').XMLHttpRequest; // jshint ignore: line
-var http = require('http');
-var https = require('https');
-var formatter = require('./lib/formatters');
-var Web3 = require('web3');
+let Jsonrpc = require('./lib/jsonrpc.js');
+let errors = require('web3-core-helpers').errors;
+let XHR2 = require('xhr2-cookies').XMLHttpRequest; // jshint ignore: line
+let http = require('http');
+let https = require('https');
+let formatter = require('./lib/formatters');
+let Web3 = require('web3');
 
 
 
-var MyDappWalletManager = function MyDappWalletManager(host, apiKey, options, callback) {
+let MyDappWalletManager = function MyDappWalletManager(host, apiKey, options, callback) {
 	this.withCredentials = options.withCredentials || false;
 		this.timeout = options.timeout || 0;
 		this.headers = options.headers;
@@ -20,7 +20,6 @@ var MyDappWalletManager = function MyDappWalletManager(host, apiKey, options, ca
 		this.agent = options.agent;
 		this.redirect = options.redirect; 
 		this.connected = false;
-		this.info = undefined;
 		// keepAlive is true unless explicitly set to false
 		const keepAlive = options.keepAlive !== false;
 		this.host = host || 'http://localhost:8545';
@@ -49,7 +48,7 @@ var MyDappWalletManager = function MyDappWalletManager(host, apiKey, options, ca
 
 
 MyDappWalletManager.prototype.init =  function(callback) {
-		let _this = this;
+		const _this = this;
 		this.sessionId = window.localStorage.getItem("SessionId");
 		if(this.sessionId){
 			this.send({"jsonrpc":"2.0","method":"init"}, _this._jsonrpcResultCallback(function (error, result){
@@ -77,7 +76,7 @@ MyDappWalletManager.prototype.init =  function(callback) {
 }
 
 MyDappWalletManager.prototype.login =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"login","params":[params]},
  		_this._jsonrpcResultCallback(function (error, result){
@@ -96,7 +95,7 @@ MyDappWalletManager.prototype.login =  function(params, callback) {
 }
 
 MyDappWalletManager.prototype.logout = function (callback){
-	let _this = this;
+	const _this = this;
 	
 	this.send({"jsonrpc":"2.0","method":"logout"},
  		_this._jsonrpcResultCallback(function (error, result){
@@ -110,19 +109,16 @@ MyDappWalletManager.prototype.logout = function (callback){
 }
 
 MyDappWalletManager.prototype.register =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"register","params":[params]},
- 		_this._jsonrpcResultCallback(function (error, result){
-				if(callback)callback(error, result);	
-		
-          })
+ 		_this._jsonrpcResultCallback(callback)
 	);
 	return true;
 }
 
 MyDappWalletManager.prototype.register2 =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"register2","params":[params]},
  		_this._jsonrpcResultCallback(function (error, result){
@@ -140,7 +136,7 @@ MyDappWalletManager.prototype.register2 =  function(params, callback) {
 }
 
 MyDappWalletManager.prototype.forgot_password =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"forgot_password","params":[params]},
  		_this._jsonrpcResultCallback(function (error, result){
@@ -152,7 +148,7 @@ MyDappWalletManager.prototype.forgot_password =  function(params, callback) {
 }
 
 MyDappWalletManager.prototype.reset_password =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"reset_password","params":[params]},
  		_this._jsonrpcResultCallback(function (error, result){
@@ -164,7 +160,7 @@ MyDappWalletManager.prototype.reset_password =  function(params, callback) {
 }
 
 MyDappWalletManager.prototype.change_password =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"change_password","params":[params]},
  		_this._jsonrpcResultCallback(function (error, result){
@@ -176,7 +172,7 @@ MyDappWalletManager.prototype.change_password =  function(params, callback) {
 }
 
 MyDappWalletManager.prototype.change_authenticator =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"change_authenticator","params":[params]},
  		_this._jsonrpcResultCallback(function (error, result){
@@ -191,7 +187,7 @@ MyDappWalletManager.prototype.change_authenticator =  function(params, callback)
 
 
 MyDappWalletManager.prototype.reflink =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"reflink","params":[params]},
  		_this._jsonrpcResultCallback(function (error, result){
@@ -205,7 +201,7 @@ MyDappWalletManager.prototype.reflink =  function(params, callback) {
 
 
 MyDappWalletManager.prototype.connect =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"connect","params":[params]},
  		_this._jsonrpcResultCallback(callback)
@@ -214,7 +210,7 @@ MyDappWalletManager.prototype.connect =  function(params, callback) {
 }
 
 MyDappWalletManager.prototype.app =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"app","params":[params]},
  		_this._jsonrpcResultCallback(callback)
@@ -224,7 +220,7 @@ MyDappWalletManager.prototype.app =  function(params, callback) {
 
 
 MyDappWalletManager.prototype.transaction =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"transaction","params":[params]},
  		_this._jsonrpcResultCallback(callback)
@@ -233,7 +229,7 @@ MyDappWalletManager.prototype.transaction =  function(params, callback) {
 }
 
 MyDappWalletManager.prototype.transaction_list =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"transaction_list","params":[params]},
  		_this._jsonrpcResultCallback(callback)
@@ -242,7 +238,7 @@ MyDappWalletManager.prototype.transaction_list =  function(params, callback) {
 }
 
 MyDappWalletManager.prototype.pay =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"pay","params":[params]},
  		_this._jsonrpcResultCallback(callback)
@@ -251,7 +247,7 @@ MyDappWalletManager.prototype.pay =  function(params, callback) {
 }
 
 MyDappWalletManager.prototype.payment =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"payment","params":[params]},
  		_this._jsonrpcResultCallback(callback)
@@ -260,7 +256,7 @@ MyDappWalletManager.prototype.payment =  function(params, callback) {
 }
 
 MyDappWalletManager.prototype.confirm =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"confirm","params":[params]},
  		_this._jsonrpcResultCallback(callback)
@@ -270,7 +266,7 @@ MyDappWalletManager.prototype.confirm =  function(params, callback) {
 
 
 MyDappWalletManager.prototype.reject =  function(params, callback) {
-	let _this = this;
+	const _this = this;
 	params = formatter.hexParamsFormatter(params);
 	this.send({"jsonrpc":"2.0","method":"reject","params":[params]},
  		_this._jsonrpcResultCallback(callback)
@@ -284,7 +280,7 @@ MyDappWalletManager.prototype.reject =  function(params, callback) {
 
 MyDappWalletManager.prototype.method = function(name)  {
 		this[name] = function(params, callback) {
-			let _this = this;
+			const _this = this;
 			params = formatter.hexParamsFormatter(params);
 			this.send({"jsonrpc":"2.0","method":name,"params":[params]},
 		 		_this._jsonrpcResultCallback(function (error, result){
@@ -310,8 +306,8 @@ MyDappWalletManager.prototype.event = function (event, err, result) {
             return  event.error = errors.InvalidResponse(result);
         } else {
             event.result = result.result;
-        }
-
+		}
+		
 
      switch(event.target){
         
@@ -328,14 +324,14 @@ MyDappWalletManager.prototype.event = function (event, err, result) {
 
 
 MyDappWalletManager.prototype._prepareRequest = function () {
-	var request;
+	let request;
 		// the current runtime is a browser
 		if (typeof XMLHttpRequest !== 'undefined') {
 			request = new XMLHttpRequest();
 		}
 		else {
 			request = new XHR2();
-			var agents = { httpsAgent: this.httpsAgent, httpAgent: this.httpAgent, baseUrl: this.baseUrl };
+			let agents = { httpsAgent: this.httpsAgent, httpAgent: this.httpAgent, baseUrl: this.baseUrl };
 			if (this.agent) {
 				agents.httpsAgent = this.agent.https;
 				agents.httpAgent = this.agent.http;
@@ -362,12 +358,12 @@ MyDappWalletManager.prototype._prepareRequest = function () {
 
 
 MyDappWalletManager.prototype.send = function (payload, callback) {
-	var _this = this;
-	var request = this._prepareRequest();
+	let _this = this;
+	let request = this._prepareRequest();
 	request.onreadystatechange = function () {
 		if (request.readyState === 4 && request.timeout !== 1) {
-			var result = request.responseText;
-			var error = null;
+			let result = request.responseText;
+			let error = null;
 			try {
 				result = JSON.parse(result);
 					
@@ -398,8 +394,9 @@ MyDappWalletManager.prototype.send = function (payload, callback) {
 
 
 
+// eslint-disable-next-line no-underscore-dangle
 MyDappWalletManager.prototype._jsonrpcResultCallback = function (callback, payload) {
-      let _this = this; 
+      const _this = this; 
   	  return function (err, result) {
         if (result && result.id && payload.id !== result.id) {
             return callback(new Error(`Wrong response id ${result.id} (expected: ${payload.id}) in ${JSON.stringify(payload)}`));
@@ -407,45 +404,32 @@ MyDappWalletManager.prototype._jsonrpcResultCallback = function (callback, paylo
         if (err) {
             return callback(err);
         }
-        if(result && result.info){
-            _this.info = result.info;
-        }
         if (result && result.error) {
             return callback(_this.ErrorResponse(result));
         }
         if (!Jsonrpc.isValidResponse(result)) {
             return callback(errors.InvalidResponse(result));
         }
-        callback(null, result.result);
+        callback(null, result.result, result.info);
 	}};
 	
  MyDappWalletManager.prototype.InvalidResponse =  function (result) {
-        var message = !!result && !!result.error && !!result.error.message ? result.error.message : 'Invalid JSON RPC response: ' + JSON.stringify(result);
-        var err = new Error(message);
-        var code = (!!result.error && !!result.error.code) ? result.error.code : 500;
+        let message = !!result && !!result.error && !!result.error.message ? result.error.message : 'Invalid JSON RPC response: ' + JSON.stringify(result);
+        let err = new Error(message);
+        let code = (!!result.error && !!result.error.code) ? result.error.code : 500;
 		err.code = code;
         return err;
     };
 
 MyDappWalletManager.prototype.ErrorResponse =  function (result) {
-        var message = !!result && !!result.error && !!result.error.message ? result.error.message : JSON.stringify(result);
-        var data = (!!result.error && !!result.error.data) ? result.error.data : null;
-        var err = new Error(message);
+        let message = !!result && !!result.error && !!result.error.message ? result.error.message : JSON.stringify(result);
+        let data = (!!result.error && !!result.error.data) ? result.error.data : null;
+        let err = new Error(message);
         err.data = data;
- 		var code = (!!result.error && !!result.error.code) ? result.error.code : null;
+ 		let code = (!!result.error && !!result.error.code) ? result.error.code : null;
 		err.code = code;
         return err;
-};
-MyDappWalletManager.prototype.info = function (){
-	
-    return this.info;
- 	
-}	
-MyDappWalletManager.prototype.resetInfo = function (){
-	
-    this.info = undefined;
- 	
-}	
+};	
 
 
 module.exports = MyDappWalletManager;

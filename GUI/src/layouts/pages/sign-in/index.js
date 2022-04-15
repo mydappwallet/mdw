@@ -42,11 +42,12 @@ import SuiButton from "components/sui/SuiButton";
 
 // Authentication layout components
 import BasicLayout from "layouts/pages/components/BasicLayout";
+import Alert from "layouts/pages/components/Alert";
 import Socials from "layouts/pages/components/Socials";
 import Separator from "layouts/pages/components/Separator";
 
 import * as authentication from "actions/authentication";
-
+import * as app from "actions/app";
 // Images
 import curved9 from "assets/images/curved-images/curved9.jpg";
 
@@ -145,6 +146,7 @@ class SignIn extends Component {
   }
 
   render() {
+    const { appStore } = this.props;
     return (
       <BasicLayout
         title={this.props.translate("authentication.title")}
@@ -183,6 +185,8 @@ class SignIn extends Component {
                   <Socials />
                 </SuiBox>
                 <SuiBox p={3}>
+                  <Alert alert={appStore.info} color="info" onClick={this.props.infoClose} />
+                  <Alert alert={appStore.error} color="primary" onClick={this.props.errorClose} />
                   <SuiBox component="form" role="form">
                     <SuiBox mb={2}>
                       <SuiInput
@@ -258,6 +262,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   signIn: (values, callback) => dispatch(authentication.signIn(values, callback)),
+  infoClose: () => dispatch(app.infoClose()),
+  errorClose: () => dispatch(app.errorClose()),
 });
 
 export default withLocalize(connect(mapStateToProps, mapDispatchToProps)(SignIn));

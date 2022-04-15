@@ -6,4 +6,5 @@ export default {
   APP_SIGN_IN: "APP_SIGN_IN",
   APP_SIGN_OUT: "APP_SIGN_OUT",
   APP_SIGN_UP: "APP_SIGN_UP",
+  APP_REFLINK: "APP_REFLINK",
 };

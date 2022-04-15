@@ -16,6 +16,8 @@ Coded by www.creative-tim.com
 // react-router-dom components
 import { Link } from "react-router-dom";
 
+import { withLocalize, Translate } from "react-localize-redux";
+
 // @mui material components
 import Grid from "@mui/material/Grid";
 
@@ -60,16 +62,16 @@ function Error500() {
                 </SuiTypography>
               </SuiBox>
               <SuiTypography variant="h2" color="text" fontWeight="bold">
-                Something went wrong
+                <Translate id="error-title-500" />
               </SuiTypography>
               <SuiBox mt={1} mb={2}>
                 <SuiTypography variant="body1" color="text" opacity={0.6}>
-                  We suggest you to go to the homepage while we solve this issue.
+                  <Translate id="error-500" />
                 </SuiTypography>
               </SuiBox>
               <SuiBox mt={4} mb={2}>
                 <SuiButton component={Link} to="/" variant="gradient" color="warning">
-                  go to homepage
+                  <Translate id="go-to-homepage" />e
                 </SuiButton>
               </SuiBox>
             </Grid>
@@ -84,4 +86,4 @@ function Error500() {
   );
 }
 
-export default Error500;
+export default withLocalize(Error500);

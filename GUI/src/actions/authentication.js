@@ -25,3 +25,11 @@ export function signUp(values, callback) {
     type: ActionTypes.APP_SIGN_UP,
   };
 }
+
+export function refLink(values, callback) {
+  const { mydappwallet } = window;
+  mydappwallet.reflink(values, callback);
+  return {
+    type: ActionTypes.APP_REFLINK,
+  };
+}

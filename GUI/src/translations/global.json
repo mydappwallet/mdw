@@ -1,5 +1,6 @@
 {
   "navbar-signOut": ["Sign Out", "Wyloguj się"],
   "or": ["or", "lub"],
-  "email": ["Email", "Email"]
+  "email": ["Email", "Email"],
+  "go-to-homepage": ["Go to Homepage", "Idź do głównej"]
 }

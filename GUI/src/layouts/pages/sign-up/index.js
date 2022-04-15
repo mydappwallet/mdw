@@ -21,7 +21,7 @@ Coded by www.creative-tim.com
 import React, { Component } from "react";
 import { connect } from "react-redux";
 // react-router-dom components
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import * as Yup from "yup";
 import { withLocalize, Translate } from "react-localize-redux";
@@ -39,17 +39,18 @@ import SuiTypography from "components/sui/SuiTypography";
 import SuiInput from "components/sui/SuiInput";
 import SuiButton from "components/sui/SuiButton";
 import SuiCheckbox from "components/sui/SuiCheckbox";
-import SuiAlert from "components/sui/SuiAlert";
 
 // Authentication layout components
 import BasicLayout from "layouts/pages/components/BasicLayout";
 import Socials from "layouts/pages/components/Socials";
 import Separator from "layouts/pages/components/Separator";
+import Alert from "layouts/pages/components/Alert";
 
 // Images
 import curved6 from "assets/images/curved-images/curved6.jpg";
 
 import * as authentication from "actions/authentication";
+import * as app from "actions/app";
 
 const initialValues = {
   email: "",
@@ -60,7 +61,7 @@ class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      agreement: false,
+      submit: false,
     };
     this.validationSchema = this.validationSchema.bind(this);
     this.props.addTranslation(authenticationTranslations);
@@ -72,19 +73,20 @@ class SignUp extends Component {
   }
 
   handleSetAgremment() {
-    // eslint-disable-next-line no-alert
-    this.formik.current.setFieldValue("agreement", !this.formik.current.values.agreement);
-    this.formik.current.setTouched({ agreement: true });
+    if (!this.state.submit)
+      this.formik.current.setFieldValue("agreement", !this.formik.current.values.agreement);
   }
 
   onSubmit(values) {
+    this.setState({ submit: true });
     authentication.signUp(values, this.onSubmited.bind(this));
     return true;
 
     // window.web3.login(values.username, values.password);
   }
 
-  onSubmited(error, result) {
+  onSubmited(error, result, info) {
+    // eslint-disable-next-line no-alert
     if (error) {
       switch (error.code) {
         case 3200:
@@ -95,6 +97,7 @@ class SignUp extends Component {
       }
       this.setState({ submit: false });
     } else {
+      this.props.info(info);
       this.setState({ redirect: "/" });
     }
   }
@@ -137,13 +140,16 @@ class SignUp extends Component {
 
   touchAll(setTouched, errors) {
     setTouched({
-      username: true,
-      password: true,
+      email: false,
+      agreement: false,
     });
     this.validateForm(errors);
   }
 
   render() {
+    const { submit, redirect } = this.state;
+    const { appStore } = this.props;
+    if (redirect) return <Redirect to={this.state.redirect} />;
     return (
       <BasicLayout
         title={this.props.translate("authentication.title")}
@@ -182,6 +188,7 @@ class SignUp extends Component {
                 </SuiBox>
                 <Separator />
                 <SuiBox pt={2} pb={3} px={3}>
+                  <Alert alert={appStore.error} color="primary" onClick={this.props.errorClose} />
                   <SuiBox component="form" role="form">
                     <SuiBox mb={2}>
                       <SuiInput
@@ -192,6 +199,7 @@ class SignUp extends Component {
                         helperText={errors.email}
                         onChange={handleChange}
                         value={values.email}
+                        disabled={submit}
                       />
                     </SuiBox>
                     <SuiBox display="flex" alignItems="center">
@@ -199,12 +207,13 @@ class SignUp extends Component {
                         checked={values.agreement}
                         onChange={this.handleSetAgremment}
                         error={!!errors.agreement}
+                        disabled={submit}
                       />
                       <SuiTypography
                         variant="button"
                         fontWeight="regular"
                         onClick={this.handleSetAgremment}
-                        sx={{ cursor: "pointer", userSelect: "none" }}
+                        sx={{ cursor: submit ? "default" : "pointer", userSelect: "none" }}
                       >
                         &nbsp;&nbsp;I agree the&nbsp;
                       </SuiTypography>
@@ -230,6 +239,7 @@ class SignUp extends Component {
                         variant="gradient"
                         color="dark"
                         fullWidth
+                        disabled={submit}
                         onClick={() => {
                           this.formik.current.submitForm();
                         }}
@@ -247,6 +257,7 @@ class SignUp extends Component {
                           color="dark"
                           fontWeight="bold"
                           textGradient
+                          disabled={submit}
                         >
                           Sign in
                         </SuiTypography>
@@ -269,6 +280,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   signUp: (values, callback) => dispatch(authentication.signUp(values, callback)),
+  info: (_info) => dispatch(app.info(_info)),
+  error: (_error) => dispatch(app.error(_error)),
+  errorClose: () => dispatch(app.errorClose()),
 });
 
 export default withLocalize(connect(mapStateToProps, mapDispatchToProps)(SignUp));

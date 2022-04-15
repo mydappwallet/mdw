@@ -38,12 +38,12 @@ Coded by www.creative-tim.com
 // Soft UI Dashboard PRO React layouts
 import Default from "layouts/default";
 import SignIn from "layouts/pages/sign-in";
-import SignUpBasic from "layouts/pages/sign-up";
+import SignUp from "layouts/pages/sign-up";
+import SignUp2 from "layouts/pages/sign-up2";
 import ResetBasic from "layouts/pages/reset-password";
 import LockBasic from "layouts/pages/lock";
 import VerificationBasic from "layouts/pages/2-step-verification";
-import Error404 from "layouts/pages/error/404";
-import Error500 from "layouts/pages/error/500";
+import Error from "layouts/pages/error";
 
 // Soft UI Dashboard PRO React icons
 import Shop from "components/Icons/Shop";
@@ -92,7 +92,19 @@ const routes = [
             name: "Basic",
             key: "basic",
             route: "/authentication/sign-up",
-            component: SignUpBasic,
+            component: SignUp,
+          },
+        ],
+      },
+      {
+        name: "Sign Up",
+        key: "sign-up2",
+        collapse: [
+          {
+            name: "Basic",
+            key: "basic",
+            route: "/register2/:refId",
+            component: SignUp2,
           },
         ],
       },
@@ -137,16 +149,10 @@ const routes = [
         key: "error",
         collapse: [
           {
-            name: "Error 404",
-            key: "error-404",
-            route: "/authentication/error/404",
-            component: Error404,
-          },
-          {
-            name: "Error 500",
-            key: "error-500",
-            route: "/authentication/error/500",
-            component: Error500,
+            name: "Error",
+            key: "error",
+            route: "/error/:code",
+            component: Error,
           },
         ],
       },

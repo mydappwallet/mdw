@@ -25,8 +25,7 @@ export function info(_info) {
 }
 
 export function infoClose() {
-  return () => {
-    const { mydappwallet } = window;
-    mydappwallet.resetInfo();
+  return {
+    type: ActionTypes.APP_INFO_CLOSE,
   };
 }

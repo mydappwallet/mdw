@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /**
 =========================================================
@@ -21,8 +22,11 @@ import { connect } from "react-redux";
 import { withLocalize } from "react-localize-redux";
 
 import globalTranslations from "translations/global.json";
+
 import Spinner from "components/layout/Spinner";
 
+const alertsTranslations = require("translations/alerts.json");
+const errorsTranslations = require("translations/errors.json");
 const MyDappWalletManager = require("mydappwallet");
 
 class App extends React.Component {
@@ -48,13 +52,16 @@ class App extends React.Component {
         onMissingTranslation,
       },
     });
+    this.props.addTranslation(alertsTranslations);
+    this.props.addTranslation(errorsTranslations);
     window.app = this;
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
   }
 
   componentDidMount() {
     window.mydappwallet = new MyDappWalletManager(
-      "https://api.mydappwallet.com",
+      /* "https://api.mydappwallet.com",  */
+      "http://localhost",
       "Rczx3k42DgnBcN4A92EA",
       {
         withCredentials: false,
